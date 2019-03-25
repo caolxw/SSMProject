@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>首页</title>
+</head>
+<body>
+<!-- <p th:text="'欢迎你  '+${user.u_id}+' '+${user.name}"></p> -->
+<table>
+	<tr>
+		<th>序号</th>
+		<th>用户名</th>
+		<th>时间</th>
+		<th>操作</th>
+	</tr>
+	<tr th:each="item : ${logs}">
+		<td th:text="${item.l_id}"></td>
+		<td th:text="${item.name}"></td>
+		<td th:text="${item.time}"></td>
+		<td th:text="${item.action}"></td>
+	</tr>
+</table>
+<form action="#" th:action="@{/pre}" method="post">
+	<input type="submit" value="上一页" />
+</form>
+<form action="#" th:action="@{/next}" method="post">
+	<input type="submit" value="下一页" />
+</form>
+</body>
+</html>
